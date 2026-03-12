@@ -1,0 +1,16 @@
+{
+  "name": "nodejs--aula3--introducao-ao-express",
+  "version": "1.0.0",
+  "description": "Aula de introducao ao Express",
+  "license": "ISC",
+  "author": "Wagner Tarumoto",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.1",
+    "express": "^5.2.1"
+  }
+}
