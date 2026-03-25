@@ -1,0 +1,14 @@
+<%- include ('partials/header.ejs')%>
+<%- include ('partials/navbar.ejs')%>
+    <h1>Clientes</h1>
+    <% listaCliente.forEach(function(cliente) { %>
+        <p>
+            <a href="/clientes/<%= cliente %>">
+            <%= cliente %> 
+            </a>
+            </p>
+<% })%>
+
+<p><a href="/">Voltar para a pagina inicial></a></p>
+
+<%- include ('partials/footer.ejs')%>
