@@ -13,6 +13,8 @@ username: 'root',
 password:"",
 //Fuzo horario
 timezone:"-03:00",
+//Nome do banco que será usado na aplicação
+database: 'sistemaloja'
 });
 //Exportando o módulo
 export default connection;

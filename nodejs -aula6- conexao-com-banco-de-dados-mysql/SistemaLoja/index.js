@@ -19,6 +19,14 @@ connection.authenticate().then(()=>{
     console.log(`Ocorreu um erro ao se conectar ao banco. ${erro}`);
 });
 
+//Criando o banco de dados (somente se anida não existir)
+connection.query("CREATE DATABASE IF NOT EXISTS SistemaLoja;").then(()=>{
+    console.log("O Banco de dados esta criado!");
+}).catch((error)=> {
+    console.log(`Ocorreu um erro ao criar o banco de dados. Erro: ${erro}`);
+});
+
+
 // Iniciando o Express 
 const app = express() 
 // Define o EJS como Renderizador de páginas
