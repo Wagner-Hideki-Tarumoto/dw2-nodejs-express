@@ -1,5 +1,5 @@
 import  Sequelize  from "sequelize";
-import connection from "../config/sequelize-config";
+import connection from "../config/sequelize-config.js";
 
 //Criando o Model
 //O metodo define ()do Sequelize cria uma tabela no BD
