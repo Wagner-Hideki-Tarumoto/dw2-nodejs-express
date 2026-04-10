@@ -1,5 +1,5 @@
 <%- include ('partials/header.ejs') %>
-    <%- include ('partials/navbar.ejs') %>
+<%- include ('partials/navbar.ejs') %>
 
 <!--FORMULARIO DE CADASTRO-->
 <div class="container">
@@ -36,6 +36,7 @@
                                 <th>Nome:</th>
                                 <th>CPF:</th>
                                 <th>Endereço:</th>
+                                <th colspan="2" style=" text-align: center;;">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,6 +52,10 @@
                                     <td>
                                         <%= cliente.endereco %>
                                     </td>
+                                    <a href="/cliente/excluir/<%= cliente.id %"></a>
+                                    <button onclick="return confirm('Deseja mesmo excluir o cliente?')"class="btn btn-danger">
+                                        Excluir
+                                    </button>
                                 </tr>
                                 <% }) %>
                         </tbody>

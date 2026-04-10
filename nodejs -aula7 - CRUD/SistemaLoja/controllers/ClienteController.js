@@ -2,9 +2,9 @@
 //const express = requee ("express")
 
 //Importanto o Express com ES6 Modules (nova)
-import express from "express";
+import express, { router } from "express";
 //Metodo do Express usado para cirar as rotas da aplicacao
-const router = express.Router();
+const router = express.router();
 
 //Importando o Model de Cliente
 import Cliente from "../models/Cliente.js";
@@ -18,7 +18,7 @@ router.get("/clientes", function (req, res) {
   // {nome: "Rafael Santos", cpf: "321.654.987-00", endereco: "Praça da Amizade, 321, Bairro Bela Vista, Cidade Alegria, Estado da Serenidade, CEP: 87654-321"}
   // ]//
   //Aqui iremos chamar o model "Clientes", invocar o métodos findAll() para buscar todos sos registros da tabela de cliente
-  Cliente.findAll().then((clientes) => {
+  cliente.findAll().then((clientes) => {
       res.render("clientes", {
         clientes: clientes,
       });
@@ -36,7 +36,7 @@ const endereco = req.body.endereco
 //Sea promessa for bem sucedida o usuario sera redirecionado para  a pagina de clinetes
 //Enviando os dados para o banco
 //O metodo create cadastra informaçoes no BD
-Cliente.create({
+cliente.create({
 //coluna //variavel
 nome: nome,
 cpf: cpf,
@@ -49,8 +49,24 @@ endereco: endereco
     console.log("Ocorreu um erro ao cadastrar o cliente." + error)
 });
 })
+//ROTA DE EXCLUSAO DE CLIENTE
+router.get("/clientes/excluir/:id", (req, res) =>{
+  //capturando o parâmentro da rota
+  const id = req.params.id
+  //enviando ID do cliente para apagar do banco de dados
+  cliente.destroy({
+    where : {
+      //banco //parâmetro recebido
+      id: id
+    }
+  }).then(()=> {
+    res.redirect("/clientes")
+    //FALHA
 
-
+  }).catch(error =>{
+    console.log("Ocorreu um erro ao excluir o cliente" + error);
+  });
+});
 
 //exportando o modulo para usar em outro arquivo
 export default router;
