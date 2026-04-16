@@ -17,5 +17,6 @@ const Cliente = connection.define('Clientes', {
 });
 //O metodo synbc()sincroniza os dados com o banco
 //force: false -> não recria a tabela caso ela já exista
-Cliente.sync({force: false });
+//Cliente.sync({force: false });
+//Pedido.sync({force: false });
 export default Cliente;

@@ -8,7 +8,7 @@ const Pedido = connection.define("pedido",{
 
    },
    valor:{
-    type:Sequelize, FLOAT,
+    type:Sequelize. FLOAT,
     allowNull: false,
    } ,
    //chave estrangeira
