@@ -2,17 +2,30 @@
 import express from "express"
 //Metodo do Express usado para cirar as rotas da aplicacao
 const router = express.Router()
+//Importando o model pedido
+import Pedido from "../models/Pedido.js";
+import Cliente from "../models/Cliente.js";
 // ROTA PEDIDOS
 router.get("/pedidos",function(req,res){
-    const pedidos = [
-        {numero: "983721931", valor: 1200},
-        {numero: "983721932", valor: 900},
-        {numero: "983721933", valor: 3200},
-        {numero: "983721934", valor: 150}
+   //FAZENDO iNNER JOIN para trazer as informações ddo cliente junto com aas informações do pedido
+   Pedido.findAll({
+    include: [
+        {
+            model: Cliente, //Inclui o modelo Cliente relacionadlo
+            required: true, //Garante que somente pedido com clientes relacionados sejam retornado
+        }
     ]
-    res.render("pedidos", {
-        pedidos: pedidos
+   }).then(pedidos => {
+    console.log(pedidos)
+    res.render("pedidos",{
+        //passando a lista de pedidos paara a pagina
+        pedidos : pedidos
     })
-})
+   }).catch(error =>{
+    console.log(`Ocorreu um erro ao listar os pedidos. ${error}`)
+   });
+   
+    });
+
 
 export default router;

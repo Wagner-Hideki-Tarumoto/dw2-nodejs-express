@@ -3,7 +3,7 @@ import connection from "../config/sequelize-config.js";
 
 //Criando o Model
 //O metodo define ()do Sequelize cria uma tabela no BD
-const Cliente = connection.define('Clientes', {
+const Cliente = connection.define('clientes', {
     nome: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -12,6 +12,7 @@ const Cliente = connection.define('Clientes', {
         type: Sequelize.STRING,
     },
     endereco: {
+        
         type: Sequelize.STRING,
     },
 });
