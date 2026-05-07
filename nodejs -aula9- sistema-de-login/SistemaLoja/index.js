@@ -8,6 +8,10 @@ import ClienteController from "./controllers/ClienteController.js"
 import ProdutoController from "./controllers/ProdutoController.js"
 //PedidoController
 import PedidoController from "./controllers/PedidoController.js"
+//Usuario Controller
+import UsuarioController from "./controllers/UsuarioController.js"
+//importando o Express-Session (gerador de sessoes do express)
+import session from  "express-session";
 
 //Importando o arquivo de copnexao com o banco
 import connection from "./config/sequelize-config.js";
@@ -20,6 +24,9 @@ import Usuario  from "./models/Usuario.js";
 //Importando as associações
 
 import associations from "./config/associations.js";
+
+//importando o MIDDLEWARE DE AUTENTICAÇÃO
+import Auth from "./middlewares/auth.js";
 
 //Realizando a conexao com o banco de dados
 connection.authenticate().then(()=>{
@@ -63,10 +70,21 @@ app.use(express.static('public'));
 //Configurando o Express para aceitar daddos vindos de formularios
 app.use(express.urlencoded({extended: false}))
 
+//configurando a sessão de usuario
+app.use(session({
+    secret: "minhalojasecret",
+    cookie:{maxAge:3600000}, //sessão expira em 30 segundo (mudar depois)
+    saveUninitialized: false, //não slava as sessões vazias (sem informação)
+    resave: false, // Evita que re-salve sessões
+}));
+
 //Ativando o uso das ROTAS
 app.use("/", ClienteController);
 app.use("/", ProdutoController);
 app.use("/", PedidoController);
+app.use("/", UsuarioController);
+
+
 
 // ROTA PRINCIPAL
 app.get("/",function(req,res){
@@ -74,9 +92,7 @@ app.get("/",function(req,res){
 })
 
 
-app.get("/login",function(req,res){
-    res.render("login")
-})
+
 
 
 
