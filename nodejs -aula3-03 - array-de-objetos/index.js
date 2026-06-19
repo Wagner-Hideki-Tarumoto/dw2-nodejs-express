@@ -1,12 +1,12 @@
-//arquivo js é o principal do projeto
+//ARQUIVO JS É O PRINCIPAL DO PROJETO
 
-//Importando o MÓDULOS do Express
+//IMPORTANDO Os MÓDULOS DO EXPRESS
 const express = require("express");
 
-//criando uma instancia do express
+//CRIANDO UMA INSTÂNCIA DO EXPRESS
 const app = express();
 
-//configiurando o EJS
+//CONFIGURANDO O EJS
 app.set("view engine", "ejs");
 
 //CRIANDO A ROTA PRINCIPAL DO SITE ("/")
@@ -41,14 +41,14 @@ app.get("/produtos", function (req, res) {
  // const produto = "";
   const listaProdutos = ["Computador", "Celular", "Tablet", "Notebook"];
   res.render("produtos", {
-    //enviando variaveis para pagina html
+    //enviando variáveis para página html
     //produto: produto,
     listaProdutos: listaProdutos,
   });
   
 });
 
-//ROTA DE PRODUTOS COM PARAMETRO
+//ROTA DE PRODUTOS COM PARÂMETRO
 app.get("/produtos/:produto", function (req, res) {
   const produto = req.params.produto;
   res.render("detalhesproduto", {
@@ -58,12 +58,12 @@ app.get("/produtos/:produto", function (req, res) {
 
 app.get("/servicos", function (req, res) {
 
-  //ARRAY DE OBJETOS
+//ARRAY DE OBJETOS
   const servicos = [
-{servico: "Desenvolvimento de Websites", descricao: "Criacao de site com Node.js e integracao a banco de dados", preco: 3500},
-{servico: "Auditoria de UX/UI", descricao: "Avaliacao da usabilidade de sistemas com sugestoes de melhoria", preco: 1800},
-{servico:"Infrastrutura em Nuvem", descricao: "Configuracao de servidores e hospedagem de aplicacoes", preco: 2900},
-{servico: "Chatbot com IA", descricao: "Desenvolvimento de chatbot para aatendimento automatico", preco: 2750},
+{servico: "Desenvolvimento de Websites", descricao: "Crição de Site com Node.js e integração ao Banco de Dados", preco: 3500},
+{servico: "Auditoria de UX/UI", descricao: "Avaliação da usabilidade de Sistemas com sugestões de melhoria", preco: 1800},
+{servico:"Infrastrutura em Nuvem", descricao: "Configuração de servidores e hospedagem de aplicações", preco: 2900},
+{servico: "Chatbot com IA", descricao: "Desenvolvimento de chatbot para atendimento automático", preco: 2750},
   ]
   res.render("servicos",{
  //ENVIANDO ARRAY DE OBJETO PARA PAGINA
@@ -72,7 +72,7 @@ app.get("/servicos", function (req, res) {
   });
  
 
-//Iniciando o servidor na porta 8080
+//INICIANDO O SERVIDOR NA PORTA 8080
 const port = 8080;
 app.listen(port, (erro) => {
   if (erro) {

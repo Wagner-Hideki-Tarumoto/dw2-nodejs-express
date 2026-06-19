@@ -18,24 +18,24 @@ products.forEach((product) => {
 });
 
 document.write(
-  "<p>Exibindo elementos do vettor através dp forEach COM OS ÍNDICES:<P/>",
+  "<p>Exibindo elementos do vetor através do forEach com os índices:<p/>",
 );
 products.forEach((PRODUCT, I) => {
   document.write(`<P>${I + 1} - ${PRODUCT}</P>`);
 });
 
 
-//METODOS DE MANIPULAÇÃO DE VETORES
+//MÉTODOS DE MANIPULAÇÃO DE VETORES
 let frutas = ['laranja', 'Maça', 'Banana']
 document.write( `<p>Nossa lista de frutas é: ${frutas}</p>`)
 frutas[3] = 'Morango'
-document.write(`<p>Agora a nossa lists de frutas é: ${frutas}</p>`)
+document.write(`<p>Agora a nossa lista de frutas é: ${frutas}</p>`)
 document.write("<h4>o método PUSH - Insere um novo elemento no FINAL do Vetor</h4>")
 frutas.push( "Abacaxi")
 document.write(`<p>Agora a nossa lista de frutas é: ${frutas}</p>`)
-document.write("<h4>o método UNSHIFT - Insere um novo elemento no INICIO do Vetor</h4>")
+document.write("<h4>O método UNSHIFT - Insere um novo elemento no INICIO do Vetor</h4>")
 frutas.unshift("pera")
 
-//COMO CONTAR OS ELEMENTOS DE UM VETOR mÉTODO length
+//COMO CONTAR OS ELEMENTOS DE UM VETOR, MÉTODO length
 const itens = frutas.length
 document.write (`<p>Na nossa lista temos ${itens}frutas.</p>`)

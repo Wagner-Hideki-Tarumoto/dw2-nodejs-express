@@ -1,17 +1,19 @@
 //OBJETOS LITERAIS NO JAVASCRIPT
 document.write(
-  `<h4Objetos literais possuem Atributos propriedades) e Métodos (funçoes)</4>`,
+  `<h4>Objetos literais possuem Atributos Propriedades) e Métodos (funçoes)</h4>`,
 );
 
 const pessoa = {};
 document.write(typeof pessoa);
 
-//Criando um objeto
+//CRIANDO UM OBJETO
 const carro = {
-  //PROPRIEDADES
+  
+//PROPRIEDADES
   modelo: "gol",
   cor: "vermelho",
-  //METODOS
+ 
+//METODOS
   acelerar() {
     return "Acelerando...";
   },
@@ -21,7 +23,7 @@ const carro = {
 };
 document.write(`<p>O modelo do carro é: ${carro.modelo}</p>`);
 document.write(`<p>A cor do carro é: ${carro.cor}</p>`);
-document.write(`<p>Quando o carro acelera ele faz:: ${carro.acelerar}</p>`);
+document.write(`<p>Quando o carro acelera ele faz: ${carro.acelerar}</p>`);
 document.write(`<p>Ativando os freios: ${carro.frear}</p>`);
 
 //MANUPULANDO ARRAYS DE OBJETOS
@@ -48,8 +50,8 @@ const productList = [
   },
 ];
 
-//EXIBINDO O ARRAY DE OBJETOS ATRAVÉS DO FOREACH
-document.write("<h4>Exibindo o array de objeto através do forEach:</h4");
+//EXIBINDO O ARRAY DE OBJETOS ATRAVÉS DO forEach
+document.write("<h4>Exibindo o array de objeto através do forEach:</h4>");
 productList.forEach((product) => {
   document.write(`
     Produto: ${peoduct.nome}<br>

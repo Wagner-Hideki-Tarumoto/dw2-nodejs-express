@@ -1,12 +1,12 @@
-//arquivo js é o principal do projeto
+//ARQUIVO JS É O PRINCIPAL DO PROJETO
 
-//Importando o MÓDULOS do Express
+//IMPORTANDO OS MÓDULOS DO EXPRESS
 const express = require("express");
 
-//criando uma instancia do express
+//CRIANDO UMA INSTÂNCIA DO EXPRESS
 const app = express();
 
-//configiurando o EJS
+//CONFIGURANDO O EJS
 app.set("view engine", "ejs");
 
 //CRIANDO A ROTA PRINCIPAL DO SITE ("/")
@@ -41,14 +41,15 @@ app.get("/produtos", function (req, res) {
  // const produto = "";
   const listaProdutos = ["Computador", "Celular", "Tablet", "Notebook"];
   res.render("produtos", {
-    //enviando variaveis para pagina html
+   
+    //enviando variáveis para página html
     //produto: produto,
     listaProdutos: listaProdutos,
   });
   
 });
 
-//ROTA DE PRODUTOS COM PARAMETRO
+//ROTA DE PRODUTOS COM PARÂMETRO
 app.get("/produtos/:produto", function (req, res) {
   const produto = req.params.produto;
   res.render("detalhesproduto", {
@@ -60,7 +61,7 @@ app.get("/servicos", function (req, res) {
   res.render("servicos");
 });
 
-//Iniciando o servidor na porta 8080
+//INICIANDO O SERVIDOR NA PORTA 8080
 const port = 8080;
 app.listen(port, (erro) => {
   if (erro) {

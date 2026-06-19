@@ -1,11 +1,11 @@
-// Comentario de linha
+// Comentário de linha
 
-/* Comentario de bloco */
+/* Comentário de bloco */
 
-// VARIAVEIS PODEM SER DECLARADOS DE 3 FORMAS:
+// VARIÁVEIS PODEM SER DECLARADOS DE 3 FORMAS:
 //VAR, LET E CONST
 
-//VAR: No geral evite p seu uso , pode ser não muito seguro.
+//VAR: No geral evite o seu uso, pode ser não muito seguro.
 //LET: Utilize quando for  necessário reatribuir o valor da variaável
 //CONST: Utiliza quando não precisar reatribuir o valor da variável.
 
@@ -20,7 +20,7 @@ document.write(nome);
 
 const pais = "Brasil"
 pais = "Argentina"
-//o valor d4 constante mnão pode ser alterado
+//o valor da constante não pode ser alterado
 document.write("<br")
 document.write(pais);
 

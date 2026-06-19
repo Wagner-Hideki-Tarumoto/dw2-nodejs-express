@@ -1,12 +1,12 @@
-//arquivo js é o principal do projeto
+//ARQUIVO JS É O PRINCIPAL DO PROJETO
 
-//Importando o MÓDULOS do Express
+//IMPORTANDO OS MÓDULOS DO EXPRESS
 const express = require("express");
 
-//criando uma instancia do express
+//CRIANDO UMA INSTÂNCIA DO EXPRESS
 const app = express();
 
-//configiurando o EJS
+//CONFIGURANDO O EJS
 app.set("view engine", "ejs");
 
 //CRIANDO A ROTA PRINCIPAL DO SITE ("/")
@@ -33,7 +33,7 @@ app.get("/servicos", function (req, res) {
   res.render("servicos");
 });
 
-//Iniciando o servidor na porta 8080
+//INICIANDO O SERVIDOR NA PORTA 8080
 const port = 8080;
 app.listen(port, (erro) => {
   if (erro) {
